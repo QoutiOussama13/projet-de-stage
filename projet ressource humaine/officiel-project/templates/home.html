@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+
+<header>
+    <style>
+        body {
+            background-image: url('../static/images/cool-background.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <!-- Jumbotron -->
+    <div id='title'>
+        <h4 class="headline"> bienvenue dans le site officiel des ressources humaines pour <br>la D.P.E.T.L.E a settat
+        </h4>
+    </div>
+    <!-- Jumbotron -->
+
+</header>
+
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+    <span>{{ message }}</span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
+
+
+<img id='multitask' src='../static/images/copy_557604716.png'>
+
+<button onclick="location = '/find'" id="btntouver" type="button" class="btn btn-primary find ">trouver un employé</button>
+
+
+
+<button onclick="location = '/add'" id="suc1" type="button" class="btn btn-success add ">ajouter un employé</button>
+
+
+
+<button onclick="location = '/employedetails'" id='tous' type="button" class="btn btn-dark add ">liste des employés</button>
+
+
+
+<button onclick="location = '/delete'" id="dang1" type="button" class="btn btn-danger deleete ">supprimer un employé</button> {% endblock content %}

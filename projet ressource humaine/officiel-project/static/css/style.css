@@ -1,0 +1,149 @@
+#add {
+    border-radius: 4%;
+    align-items: center;
+    margin-top: 5%;
+    left: 20rem;
+    padding: 30px;
+    height: auto;
+    width: 57vw;
+    position: absolute;
+    margin-bottom: 30px;
+}
+
+.headline,
+.ff,
+.fff {
+    position: relative;
+    text-align: center;
+    top: 1rem;
+    left: 0.5rem;
+    font-size: 44px;
+}
+
+#suc1,
+#btntouver,
+#dang1,
+#tous {
+    border-radius: 10%;
+    overflow: hidden;
+    margin-bottom: 8%;
+    margin-right: 100px;
+}
+
+#tous {
+    position: absolute;
+    left: 33%;
+    bottom: 8rem;
+}
+
+#addimg {
+    position: relative;
+    left: 40%;
+    top: 30%;
+    opacity: 0.5;
+    height: 100px;
+    width: 100px;
+}
+
+.btn {
+    margin-right: 30px;
+}
+
+#btntouver {
+    position: absolute;
+    left: 57%;
+    bottom: -0.3rem;
+}
+
+#dang1 {
+    position: absolute;
+    left: 28.6%;
+    bottom: -0.3rem;
+}
+
+#suc1 {
+    position: absolute;
+    left: 55%;
+    bottom: 8rem;
+}
+
+#addt {
+    color: white;
+    text-shadow: 2px 2px 5px red;
+    position: relative;
+    top: 2rem;
+    left: 10px;
+}
+
+#listemp {
+    color: white;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 58px;
+}
+
+#im1 {
+    position: absolute;
+    margin-top: 25rem;
+    right: 59rem;
+}
+
+#im2 {
+    position: absolute;
+    margin-top: 64rem;
+    right: 7rem;
+}
+
+#para1 {
+    position: absolute;
+    left: 8rem;
+}
+
+#content1 {
+    position: relative;
+    left: 40rem;
+}
+
+#content2 {
+    position: relative;
+    right: 40rem;
+    width: 500px;
+    margin-top: 20px;
+}
+
+#sech {
+    position: relative;
+    margin-left: 36rem;
+}
+
+.fre {
+    width: 25%;
+    height: 100px;
+}
+
+#homeimage {
+    position: absolute;
+    right: 0;
+    height: 30rem;
+    width: 30rem;
+    top: 7rem;
+}
+
+#title {
+    color: white;
+    width: 50%;
+    position: absolute;
+    text-align: right;
+    left: 24%;
+    top: 7rem;
+    text-shadow: black 2px 2px 0;
+}
+
+#multitask {
+    width: 20%;
+    position: absolute;
+    left: 40%;
+    bottom: 3rem;
+}

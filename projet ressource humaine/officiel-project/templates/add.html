@@ -1,0 +1,187 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+    }
+    
+    .card-registration .select-arrow {
+        top: 13px;
+    }
+</style>
+
+<!--
+<form id="add" action="/add" method="POST">
+
+    <div class="row mb-4">
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form6Example1">First name</label>
+                <input name='name' type="text" id="form6Example1" class="form-control" required />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form6Example2">Last name</label>
+                <input name='fname' type="text" id="form6Example2" class="form-control" required />
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example3">CIN</label>
+        <input name='cin' type="text" id="form6Example3" class="form-control" required />
+
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Address</label>
+        <input name='adress' type="text" id="form6Example4" class="form-control" required/>
+
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example5">Email</label>
+        <input name='email' type="email" id="form6Example5" class="form-control" required />
+
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example6">Phone</label>
+        <input name='number' type="text" id="form6Example6" class="form-control" required/>
+
+    </div>
+
+ 
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">service</label>
+        <input name='job' type="text" id="form6Example4" class="form-control" required/>
+
+    </div>
+
+   
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">grade</label>
+        <input name='grade' type="text" id="form6Example4" class="form-control" required/>
+
+    </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">date</label>
+        <input name='date' placeholder='YYYY-DD-JJ' type='text' id="form6Example4" class="form-control" required/>
+
+    </div>
+  
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">photo</label><br>
+        <input name='image' type="file" id="form6Example4" />
+
+    </div>
+
+
+    <input type="submit" class="btn btn-info btn-block mb-4">
+</form>
+
+-->
+
+<section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/img4.jpg" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+                                <h3 class="mb-5 text-uppercase">entrer les donnes de votre employe</h3>
+                                <form action='/add' method='POST'>
+                                    <div class="row">
+
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input required name='fname' type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="prénom..." />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input required name='name' type="text" class="form-control form-control-lg" placeholder="nom..." />
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input required name='cin' type="text" id="form3Example1m1" class="form-control form-control-lg" min="4" placeholder="CIN..." />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <input required name='number' type="text" id="form3Example1n1" class="form-control form-control-lg" placeholder="Numéro..." />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input required name='adress' type="text" id="form3Example8" class="form-control form-control-lg" placeholder='Adress...' />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input required name='email' type="email" id="form3Example8" class="form-control form-control-lg" placeholder='Email...' />
+                                    </div>
+                                    <div class="row">
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input required name='job' type="text" id="form3Example9" class="form-control form-control-lg" placeholder="Service..." />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input required name='grade' type="text" id="form3Example90" class="form-control form-control-lg" placeholder='Grade...' />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input required name='date' type="text" id="form3Example99" class="form-control form-control-lg" placeholder="Date d'embauche.." />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input name='image' type="file" id="form3Example97" class="form-control form-control-lg" required />
+                                    </div>
+
+                                    <div class="d-flex justify-content-center ">
+                                        <button style='width:40%' type="submit" class="btn btn-warning btn-lg ms-1">Submit </button>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</form>
+
+<div>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        <span>{{ message }}</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+                </button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %} {% endblock content %}

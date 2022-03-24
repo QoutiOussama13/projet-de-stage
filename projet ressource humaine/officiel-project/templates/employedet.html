@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 id="listemp">liste des employés</h1>
+
+
+<style>
+    body {
+        background-image: url('../static/images/cool-background\ \(1\)\ -\ Copy.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="row row-cols-1 row-cols-md-3 g-5 mt-3  m-3 ">
+    {% for row in mydata %}
+    <div class="col">
+        <div style="width: 22rem" class="card  h-80 mb-5 ">
+
+            <img src="../static/images/{{row.image}}" class=" fre h-5  mx-auto rounded-circle d-block " />
+            <div class="card-body ">
+                <h3 style='text-align:center' class="card-title ">{{row.nom}} {{row.prenom}} </h3>
+                <ul class="list-group list-group-flush  ">
+                    <li class="list-group-item ">
+                        <b>CIN</b>:{{row.CIN}}</li>
+                    <li class="list-group-item ">
+                        <B>num</B> {{row.tele}}</li>
+                    <li class="list-group-item "><b>adress</b>: {{row.adresss}}</li>
+                    <li class="list-group-item "><b>Email</b>: {{row.Email}}</li>
+                    <li class="list-group-item "><b>sevice</b>: {{row.travail}}</li>
+                    <li class="list-group-item "><b>grade</b>: {{row.grade}}</li>
+                    <li class="list-group-item "><b>Date d'embauche</b>: {{row.date}}</li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+    {% endfor %}
+
+
+</div>
+
+
+{% endblock content %}

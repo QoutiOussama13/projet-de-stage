@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+    body {
+        background-image: url('../static/images/cool-background\ \(1\)\ -\ Copy.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<header>
+
+    <div class="p-5 text-center bg-image" style="
+
+      height: 400px;
+      margin-top: 58px;
+    ">
+        <div>
+            <form method="POST">
+                <input class=" form-control-lg" name='ciin' type="text" placeholder="donner le cin">
+                <input id='searc' value='search' onclick="location='/delsess'" type="submit" class="btn btn-primary">
+            </form>
+            <button onclick="location ='/clearr'" class="btn btn-danger">clear</button>
+            <h1 id='resname'>{{message}}</h1>
+            {% if dell %}
+            <h1 id='resname'>voulez vous suprimer les donnees de {{dell.prenom}} {{dell.nom}} ?? </h1>
+            <button class="btn btn-primary" onclick="location ='/suprimer/{{dell.id}}/'">oui</button>
+            <button class="btn btn-danger" onclick="location ='/clearrr'">non</button> {% endif %}
+        </div>
+    </div>
+</header>
+
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+    <span>{{ message }}</span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+</div>
+{% endfor %} {% endif %} {% endwith %} {% endblock content %}

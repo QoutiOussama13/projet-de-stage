@@ -1,0 +1,139 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+    body {
+        background-image: url('../static/images/cool-background\ \(1\)\ -\ Copy.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<h1 id="listemp">trouver un employé</h1>
+
+<table class="table table-hover table-dark table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Cin</th>
+        <th>prenom</th>
+        <th>nom </th>
+        <th>Numéro</th>
+        <th>E-mail</th>
+        <th>Modifier</th>
+    </tr>
+
+
+    {% for row in mydata %}
+
+    <tr>
+        <td>{{row.id}}</td>
+        <td>{{row.CIN}}</td>
+        <td>{{row.prenom}}</td>
+        <td>{{row.nom}}</td>
+        <td>{{row.tele}}</td>
+        <td>{{row.Email}}</td>
+        <td>
+            <a href="/modifier/{{row.id}}" class="btn btn-warning  " data-toggle="modal" data-target="#secondModal{{row.id}}">modifier</a>
+        </td>
+    </tr>
+
+
+
+    <div class="modal fade" id="secondModal{{row.id}}" tabindex="-1" role="dialog" aria-labelledby="secondModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title " id="secondModalLabel">MODIFIER UN EMPLOYER</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+
+                </div>
+                <div class="modal-body">
+                    <form action="{{url_for('modifier')}}" method="POST">
+                        <div class="form-group">
+                            <input name="id" type="hidden" value="{{row.id}}">
+                            <label for="cin">CIN</label>
+                            <input type="text" name="cin" class="form-control" id="cin" aria-describedby="CIN" placeholder="Entrer CIN" required="1" value="{{row.CIN}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">nom </label>
+                            <input type="text" class="form-control" name="nom" id="nom" aria-describedby="noms" placeholder="Entrer nom et prenom" required="1" value="{{row.nom}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">prénom</label>
+                            <input type="text" class="form-control" name="prenom" id="email" aria-describedby="email" placeholder="Entrer prénom" required="1" value="{{row.prenom}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Numéro</label>
+                            <input type="text" class="form-control" name="num" id="email" aria-describedby="email" placeholder="Entrer Numéro" required="1" value="{{row.tele}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="email" placeholder="Entrer Email" required="1" value="{{row.Email}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adress</label>
+                            <input type="text" class="form-control" name="adress" id="email" aria-describedby="email" placeholder="Entrer Adress" required="1" value="{{row.adresss}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="tlf">Service</label>
+                            <input type="text" class="form-control" name="service" id="tlf" aria-describedby="TLF" placeholder="Entrer le Service " required="1" value="{{row.travail}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Salaire">Grade</label>
+                            <input type="text" class="form-control" name="grade" id="Salaire" aria-describedby="Salaire" placeholder="Entrer le grade " required="1" value="{{row.grade}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">date d'embauche </label>
+                            <input type="text" class="form-control" name="date" id="email" aria-describedby="email" placeholder="Entrer la date" required="1" value="{{row.date}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Image</label>
+                            <input type="file" class="form-control" name="image" id="email" aria-describedby="email" value="{{row.image}}">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Modifier</button>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+
+    <div>
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
+
+    </div>
+
+    <div id="sech">
+        <form action="/find" method="POST">
+            <input name='find' type="text" placeholder="donner le CIN">
+            <input value='search' onclick="location='/delsess'" type="submit" class="btn btn-primary">
+        </form>
+        <button onclick="location ='/clear'" class="btn btn-danger">clear</button>
+        <h1> {{messagge.prenom}} {{messagge.nom}}</h1>
+        {% if messagge =='not found' %}
+        <h1 id='message'>{{messagge}}</h1>
+        {% endif %}
+    </div>
+    {% endblock content %}
